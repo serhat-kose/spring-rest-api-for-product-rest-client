@@ -26,7 +26,7 @@ public class Product {
     private String productName;
 
     @NotNull
-    private  String ProductType;
+    private  String productType;
 
     @Positive
     private BigDecimal price;

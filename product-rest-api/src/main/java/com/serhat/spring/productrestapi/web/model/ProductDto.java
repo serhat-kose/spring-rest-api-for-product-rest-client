@@ -19,7 +19,7 @@ public class ProductDto {
 
     private String productName;
 
-    private  String ProductType;
+    private  String productType;
 
     private BigDecimal price;
 
