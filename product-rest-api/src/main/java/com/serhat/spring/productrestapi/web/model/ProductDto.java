@@ -15,7 +15,7 @@ import java.util.*;
 @Getter
 public class ProductDto {
 
-    private UUID uuid;
+    private Long id;
 
     private String productName;
 
