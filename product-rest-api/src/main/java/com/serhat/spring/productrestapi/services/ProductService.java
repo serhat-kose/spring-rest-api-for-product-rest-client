@@ -9,7 +9,7 @@ public interface ProductService {
 
     ProductDto saveProduct(ProductDto productDto);
 
-    ProductDto updateProduct(ProductDto productDto);
+    ProductDto updateProduct(UUID productId,ProductDto productDto);
 
     void deleteProductById(UUID productId);
 }

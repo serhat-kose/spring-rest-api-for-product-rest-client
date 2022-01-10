@@ -25,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDto updateProduct(ProductDto productDto) {
+    public ProductDto updateProduct(UUID productId,ProductDto productDto) {
         return null;
     }
 
