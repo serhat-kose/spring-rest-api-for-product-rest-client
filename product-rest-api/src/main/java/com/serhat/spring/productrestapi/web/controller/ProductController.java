@@ -1,5 +1,6 @@
 package com.serhat.spring.productrestapi.web.controller;
 
+import com.serhat.spring.productrestapi.payload.*;
 import com.serhat.spring.productrestapi.services.*;
 import com.serhat.spring.productrestapi.web.model.*;
 import lombok.*;
@@ -19,28 +20,27 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/{productId}")
-    public ResponseEntity<ProductDto> getProductById(@PathVariable("productId")Long productId){
+    public ResponsePayload getProductById(@PathVariable("productId")Long productId){
 
-        return new ResponseEntity<>(productService.getProductById(productId),HttpStatus.OK);
+        return productService.getProductById(productId);
     }
 
     @PostMapping
-    public ResponseEntity<ProductDto> saveProduct(@Validated @RequestBody ProductDto productDto){
-        return  new ResponseEntity<>(productService.saveProduct(productDto),HttpStatus.CREATED);
+    public ResponsePayload saveProduct(@Validated @RequestBody ProductDto productDto){
+        return productService.saveProduct(productDto);
 
     }
 
     @PutMapping("/{productId}")
-    public ResponseEntity updateProduct(@PathVariable("productId") Long productId,@RequestBody ProductDto productDto){
-            productService.updateProduct(productId,productDto);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponsePayload updateProduct(@PathVariable("productId") Long productId,@RequestBody ProductDto productDto){
+            ;
+        return productService.updateProduct(productId,productDto);
     }
 
     @DeleteMapping("/{productId}")
-    public ResponseEntity deleteProductById(@PathVariable("productId") Long productId){
-        productService.deleteProductById(productId);
+    public ResponsePayload deleteProductById(@PathVariable("productId") Long productId){
 
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return productService.deleteProductById(productId);
 
     }
 }
