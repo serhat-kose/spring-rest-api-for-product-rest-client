@@ -9,6 +9,7 @@ import org.springframework.http.*;
 import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.*;
 import java.util.*;
 
 @RestController
@@ -26,7 +27,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponsePayload saveProduct(@Validated @RequestBody ProductDto productDto){
+    public ResponsePayload saveProduct(@RequestBody @Valid ProductDto productDto){
         return productService.saveProduct(productDto);
 
     }
