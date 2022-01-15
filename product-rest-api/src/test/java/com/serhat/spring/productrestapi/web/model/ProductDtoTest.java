@@ -20,4 +20,11 @@ class ProductDtoTest extends BaseTest {
         String jsonString = objectMapper.writeValueAsString(productDto);
         System.out.println(jsonString);
     }
+
+    @Test
+    void testDeSerialize() throws JsonProcessingException {
+        String json = "{\"id\":1323535,\"productName\":\"Television\",\"productType\":\"TECH\",\"price\":150,\"productCode\":12321355,\"createdTime\":\"2022-01-15T11:57:47.870+00:00\"}";
+        ProductDto dto = objectMapper.readValue(json,ProductDto.class);
+        System.out.println(dto);
+    }
 }
