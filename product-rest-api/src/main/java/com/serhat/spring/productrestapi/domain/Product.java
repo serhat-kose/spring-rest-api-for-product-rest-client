@@ -7,6 +7,7 @@ import lombok.Builder;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.io.*;
 import java.math.*;
 import java.util.*;
 
@@ -16,7 +17,7 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Product {
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
